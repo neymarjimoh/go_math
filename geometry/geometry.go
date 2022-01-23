@@ -1,5 +1,11 @@
 package geometry
 
-func CubeVolume(x float64) float64 {
-	return x * x * x
+import "errors"
+
+func CubeVolume(x float64) (float64, error) {
+	if x != 0 {
+
+		return x * x * x, nil
+	}
+	return 0, errors.New("invalid CubeVolume value: does'nt accept 0")
 }
